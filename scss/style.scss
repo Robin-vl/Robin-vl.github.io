@@ -1,0 +1,267 @@
+//Kleurenpallet
+$kleur1: #303231;
+$kleur2:#325052;
+$kleur3:#929CA5;
+$kleur4: #99B7B7;
+$kleur5:#D9E4E6;
+//Achtergrond
+%background{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter:opacity(0.8) grayscale(90%);
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #aboutme,.titels{
+        margin-top:10px;
+        background-color: rgba(255, 255, 255, 0.466);
+        border:2px solid $kleur2;
+    }
+}
+blockquote{
+    font-family: 'Special Elite', cursive;
+    background-color: rgba(217, 228, 230, 0.671) ;
+    border-radius: 15px;
+}
+nav{
+    background-color: $kleur5;
+}
+body{
+    overflow-x: hidden;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Sanchez', serif;
+}
+#banner{
+    @extend %background;
+    background-image: url('../images/IMG_6416.JPG');  
+}
+#banner1{
+    @extend %background;
+    background-image: url('../images/robin.jpg');  
+}
+#bannerResume{
+    @extend %background;
+    background-image: url('../images/computer-1245714_1920.jpg');
+}
+.nav-item a {
+    text-decoration: none;
+    position: relative;
+    &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.4s ease-in-out
+    }
+    &:hover:after {
+    opacity: 1;
+    transform: scaleX(1);
+    }
+  }
+.balk{
+    height: 70px;
+    width:100.3%;
+    transform: rotate(-2deg);
+    position: relative;
+    background-color: white;
+    top:-25px;
+}
+#grid{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 8px;
+    .circle{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        background-color: white;
+        font-size: 4em;
+        [class*=html]{
+            color:blue;
+        }
+        [class*=css]{
+            color:rgb(255, 196, 0);
+        }
+        [class*=js]{
+            color:rgb(195, 202, 92);
+        }
+        [class*=android]{
+            color:rgb(92, 202, 97);
+        }
+        [class*=windows]{
+            color:rgb(175, 175, 175);
+        }
+        [class*=database]{
+            color:rgb(176, 93, 214);
+        }
+        [class*=angular]{
+            color:rgb(180, 38, 38);
+        }
+        [class*=berry]{
+            color:rgb(89, 11, 126);
+        }
+
+    }
+    .web,.platform{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    #platforms{
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(2,50%) ;
+        font-size: 1.75em;
+        text-align: center;
+    }
+}
+ul{
+    list-style-type: none;
+}
+//Flipping cards
+.card-flip,#tussen{
+    border-radius: 25px;
+    background-color: $kleur5;
+}
+.card{
+    width: 18rem;
+    position: relative;
+    height: 331px;
+    border:0
+}
+.card:hover .card-front{
+    transform:rotateY(180deg);
+}
+.card:hover .card-back{
+    transform:rotateY(0deg);
+}
+.card-back{
+    transform:rotateY(180deg);
+}
+.card-flip{
+    background-color: $kleur4;
+    color:white;
+    transition: all 1s;
+    position: absolute;
+    height: 100%;
+    width:100%;
+    backface-visibility: hidden;
+}
+// About me
+#cardProfile{
+    position: relative;
+    top:-130px;
+    //border:1px solid $kleur2;
+    box-shadow: 5px -2px 3px 5px rgba(0, 0, 0, 0.233);
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $kleur5;
+    height: 60px;
+    width: 60px;
+    font-size: 1.5em;
+    border-radius: 50%;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.829);
+    &:hover{
+        transform: scale(1.2);
+        box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.432);
+        transition: all 0.5s ease-in-out;
+    }
+    a{
+        color:black
+    }
+    }
+#social{
+    border-bottom: 2px solid #32505277;
+    
+}
+footer{
+    background-color: $kleur5;
+    letter-spacing: 4px;
+    address{
+        margin-bottom:0;
+    }
+}
+.modal-body{
+    overflow-x: scroll;
+}
+.rijen{
+    background-color:$kleur5;
+    border-radius: 25px;
+}
+#ops1,#ops2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#profile{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border:5px solid white;
+    object-fit: cover;
+    position: relative;
+    top:-75px;
+    margin-bottom: -20%;
+}
+//button card resume
+#more{
+    border:white;
+    border-radius: 25px;
+    background-color: rgba(235, 227, 227, 0.678);
+    box-shadow: -2px 2px 2px black;
+    &:hover{
+        transform: scale(1.1);
+        letter-spacing: 3px;
+        box-shadow: -5px 5px 5px black;
+        transition: all 0.5s ease-in-out;
+    }
+}
+@media only screen and (max-width: 450px) {
+    #grid{
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(1,100%);
+        grid-gap: 8px;
+        .circle{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: white;
+            font-size: 1.8em;}
+  }
+
+      .rijen ul li{
+          font-size: 0.8em;
+      }
+      #profile{
+          width: 150px;
+          height: 150px;
+      }
+      #banner1{
+        justify-content: flex-start;
+        margin-top: 5px;
+      }
+}
